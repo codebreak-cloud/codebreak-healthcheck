@@ -267,28 +267,17 @@
 
     async function deleteRow(id) {
       if (!window.confirm('Delete this submission? This cannot be undone.')) return;
-      // .select('id') forces Supabase to return the deleted row(s);
-      // an empty array means RLS blocked the delete (e.g. expired session).
-      const { data, error } = await sb
+      const { error } = await sb
         .from('submissions')
         .delete()
-        .eq('id', id)
-        .select('id');
+        .eq('id', id);
       if (error) {
         console.error('[Admin] Delete error:', error);
-        alert('Delete failed: ' + error.message + '\n\nTry signing out and back in.');
+        alert('Delete failed: ' + error.message);
         return;
       }
-      if (!data || data.length === 0) {
-        console.warn('[Admin] Delete returned no rows — session may have expired. Re-fetching from DB.');
-        // Sign out and force a fresh login so the session is valid
-        await sb.auth.signOut();
-        setAuthed(false);
-        setRows([]);
-        alert('Your session expired. Please sign in again and retry the delete.');
-        return;
-      }
-      setRows(prev => prev.filter(r => r.id !== id));
+      // Re-fetch from DB so the UI reflects actual state
+      await load();
     }
 
     if (!CONFIGURED) {
