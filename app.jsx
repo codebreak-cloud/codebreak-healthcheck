@@ -227,7 +227,17 @@ function App() {
     const sc = window.scoreFromAnswers(answers);
     setScoring(sc);
 
+    const tierLabel = { one: 'Scale Ready', two: 'Nearly There', three: 'Fix First' };
     const payload = {
+      // Flat fields — easy to map in Zapier / Make without navigating nested objects
+      first_name:  c.first,
+      email:       c.email,
+      phone:       c.phone,
+      score:       sc.total,
+      tier:        sc.tier,
+      tier_label:  tierLabel[sc.tier] || sc.tier,
+
+      // Full nested objects (retained for Supabase + any advanced Zap steps)
       contact: c,
       answers,
       scoring: sc,
