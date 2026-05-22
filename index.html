@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Marketing Health Check — Codebreak</title>
+  <meta name="description" content="A 20-question diagnostic of how scale-ready your marketing actually is. Honest, scored, free." />
+  <meta name="theme-color" content="#1d1d1d" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Marketing Health Check — Codebreak" />
+  <meta property="og:description" content="Answer 20 questions. Find out exactly where your marketing is strong, where it's leaking, and what to fix first." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codebreak.co.uk/marketing-health-check/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marketing Health Check — Codebreak" />
+  <meta name="twitter:description" content="Answer 20 questions. Find out exactly where your marketing is strong, where it's leaking, and what to fix first." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="colors_and_type.css?v=2" />
+  <link rel="stylesheet" href="app.css?v=2" />
+
+  <!-- Print stylesheet — clean results output -->
+  <style media="print">
+    .cb-topbar, .cb-dino-bg, .dino-bg,
+    .results-hero .dino-bg,
+    .cta-panel .dino-bg,
+    .results-tail,
+    .calc-wrap,
+    .quiz-stage,
+    .intro-wrap,
+    .gate-wrap { /* keep results visible */ }
+
+    .cb-btn,
+    .results-restart,
+    .quiz-back,
+    .gate-back { display: none !important; }
+
+    .results-page { background: #fff !important; color: #1d1d1d !important; }
+    .results-hero { background: #1d1d1d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cta-panel { background: #1d1d1d !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    .results-body { padding: 32px 24px !important; }
+    .blocks-flow { gap: 32px !important; }
+    .flags-flow { gap: 12px !important; }
+    .opener-flow { margin-bottom: 32px !important; }
+
+    @page { margin: 20mm; }
+  </style>
+
+  <!-- GA4 — replace GA_MEASUREMENT_ID with your real ID, or remove this block -->
+  <!-- To enable: uncomment and set your GA4 measurement ID
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  -->
+</head>
+<body>
+  <div id="root"></div>
+  <div id="consent-root"></div>
+
+  <!-- React + Babel (same CDN URLs as the original design; swap to production builds once hosted) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- Data + copy -->
+  <script src="data.js"></script>
+  <script src="copy.js"></script>
+
+  <!-- Components (JSX, transpiled in-browser) -->
+  <script type="text/babel" src="quiz.jsx"></script>
+  <script type="text/babel" src="gate.jsx"></script>
+  <script type="text/babel" src="results.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+  <script type="text/babel" src="cookie.jsx"></script>
+</body>
+</html>

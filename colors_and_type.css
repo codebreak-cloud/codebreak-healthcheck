@@ -1,0 +1,181 @@
+/* ============================================================
+   CODEBREAK DESIGN SYSTEM — Colors & Typography
+   ============================================================ */
+
+/* --- Webfonts (loaded from Google Fonts in HTML head for performance) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto:wght@300;400;500&display=swap');
+
+/* ============================================================
+   BASE COLOR TOKENS
+   ============================================================ */
+:root {
+  /* Brand primaries */
+  --cb-black:        #1d1d1d;   /* Pantone Black U */
+  --cb-charcoal:     #333333;   /* Day-to-day dark text */
+  --cb-yellow:       #ffe800;   /* Pantone Yellow U — primary accent */
+  --cb-grey:         #dad9d7;   /* Pantone Cool Gray 1 */
+  --cb-white:        #ffffff;
+
+  /* Extended neutrals (derived) */
+  --cb-grey-dark:    #8a8a88;
+  --cb-grey-mid:     #b5b4b2;
+  --cb-grey-light:   #eeedec;
+  --cb-off-white:    #f7f7f6;
+
+  /* Yellow scale */
+  --cb-yellow-light: #fff6a3;
+  --cb-yellow-dark:  #ccba00;
+
+  /* Semantic */
+  --color-bg:        var(--cb-white);
+  --color-bg-alt:    var(--cb-off-white);
+  --color-bg-dark:   var(--cb-black);
+  --color-fg:        var(--cb-charcoal);
+  --color-fg-muted:  var(--cb-grey-dark);
+  --color-fg-invert: var(--cb-white);
+  --color-accent:    var(--cb-yellow);
+  --color-border:    var(--cb-grey);
+  --color-border-lt: var(--cb-grey-light);
+
+  /* Status (minimal palette — keep it brand-first) */
+  --color-success:   #2ecc71;
+  --color-error:     #e74c3c;
+  --color-info:      var(--cb-yellow);
+
+  /* ============================================================
+     TYPE TOKENS
+     ============================================================ */
+  --font-display:    'Montserrat', sans-serif;
+  --font-body:       'Roboto', sans-serif;
+
+  /* Weight shortcuts */
+  --fw-light:        300;
+  --fw-regular:      400;
+  --fw-semibold:     600;
+  --fw-bold:         700;
+  --fw-extrabold:    800;
+
+  /* Type scale (desktop) */
+  --text-xs:         0.75rem;   /* 12px */
+  --text-sm:         0.875rem;  /* 14px */
+  --text-base:       1rem;      /* 16px */
+  --text-lg:         1.25rem;   /* 20px */
+  --text-xl:         1.5rem;    /* 24px */
+  --text-2xl:        2rem;      /* 32px */
+  --text-3xl:        2.5rem;    /* 40px */
+  --text-4xl:        3.5rem;    /* 56px */
+  --text-5xl:        4.5rem;    /* 72px */
+
+  /* Leading */
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-loose:   1.75;
+
+  /* Tracking */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.05em;
+  --tracking-caps:   0.12em;
+
+  /* ============================================================
+     SPACING
+     ============================================================ */
+  --space-1:  0.25rem;   /* 4px */
+  --space-2:  0.5rem;    /* 8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.5rem;    /* 24px */
+  --space-6:  2rem;      /* 32px */
+  --space-7:  3rem;      /* 48px */
+  --space-8:  4rem;      /* 64px */
+  --space-9:  6rem;      /* 96px */
+  --space-10: 8rem;      /* 128px */
+
+  /* ============================================================
+     RADII / SHADOWS / BORDERS
+     ============================================================ */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-full: 9999px;
+
+  /* Shadows — minimal, sharp, not rounded/diffuse */
+  --shadow-sm:   0 1px 2px rgba(29,29,29,.08);
+  --shadow-md:   0 2px 8px rgba(29,29,29,.10);
+  --shadow-lg:   0 4px 24px rgba(29,29,29,.12);
+  --shadow-hard: 4px 4px 0 var(--cb-black);
+
+  /* Transitions */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-sm: 150ms;
+  --duration-md: 250ms;
+  --duration-lg: 400ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE CLASSES
+   ============================================================ */
+.cb-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--cb-black);
+}
+.cb-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--cb-black);
+}
+.cb-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--cb-charcoal);
+}
+.cb-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  color: var(--cb-charcoal);
+}
+.cb-body {
+  font-family: var(--font-body);
+  font-weight: var(--fw-light);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--cb-charcoal);
+}
+.cb-body-lg {
+  font-family: var(--font-body);
+  font-weight: var(--fw-light);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--cb-charcoal);
+}
+.cb-caption {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--cb-grey-dark);
+}
+.cb-label {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xs);
+  line-height: 1;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--cb-charcoal);
+}
