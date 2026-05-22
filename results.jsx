@@ -137,7 +137,7 @@ function ResultsScreen({ scoring, contact, onRestart }) {
     // name + email are standard Calendly fields.
     // Phone goes via a custom question param — a1 = first custom question on the event.
     // If phone sits in a different position, change a1 to a2, a3, etc.
-    const base = 'https://calendly.com/codebreak/strategy-call';
+    const base = (window.CONFIG && window.CONFIG.calendlyUrl) || 'https://calendly.com/codebreak/30-minute-follow-up-chat';
     const params = new URLSearchParams({
       name: contact.first,
       email: contact.email,
