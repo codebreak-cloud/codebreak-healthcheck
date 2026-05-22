@@ -54,16 +54,17 @@ window.cbTrack = function(event, props = {}) {
 async function sendWebhook(payload) {
   if (!CONFIG.webhookUrl) return;
   try {
-    const res = await fetch(CONFIG.webhookUrl, {
+    // mode: 'no-cors' + text/plain avoids the CORS preflight that can swallow
+    // the request body when POSTing application/json cross-origin.
+    // Zapier catch hooks parse the body as JSON regardless of content-type.
+    await fetch(CONFIG.webhookUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload),
     });
-    if (!res.ok) throw new Error('Webhook returned ' + res.status);
   } catch (err) {
-    // Log the failure but don't block the user
     console.error('[CODEBREAK] Webhook failed:', err);
-    // TODO: send to dead-letter queue / retry mechanism if needed
   }
 }
 
