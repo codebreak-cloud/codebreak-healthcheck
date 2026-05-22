@@ -1185,6 +1185,16 @@ button { font-family: inherit; }
   padding: 16px 24px 24px;
   flex-shrink: 0;
 }
+/* Banner modal — stacked action buttons */
+.ck-banner-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ck-banner-btn {
+  width: 100%;
+  text-align: center;
+}
 
 /* Toggle rows */
 .ck-row {

@@ -124,6 +124,16 @@ function clearState() {
 }
 
 /* ============================================================
+   CONSENT GATING
+   Quiz cannot start until the user has made a cookie choice.
+   Matches the CONSENT_KEY used in cookie.jsx.
+   ============================================================ */
+const CONSENT_KEY = 'cb_cookie_consent';
+function hasConsent() {
+  try { return !!localStorage.getItem(CONSENT_KEY); } catch { return false; }
+}
+
+/* ============================================================
    APP
    ============================================================ */
 function App() {
@@ -138,6 +148,14 @@ function App() {
   const [showResume, setShowResume] = React.useState(
     !isPreview && !!(saved?.answers && Object.keys(saved.answers).length > 0 && !saved.completed)
   );
+
+  // Consent gating — true once the user has made any cookie choice
+  const [consentReady, setConsentReady] = React.useState(() => hasConsent());
+  React.useEffect(() => {
+    const handler = () => setConsentReady(true);
+    window.addEventListener('cb_consent_saved', handler);
+    return () => window.removeEventListener('cb_consent_saved', handler);
+  }, []);
 
   // Dev preview: ?preview=tier1|tier2|tier3 — jump straight to a stubbed results screen
   React.useEffect(() => {
@@ -172,17 +190,20 @@ function App() {
   // --- Stage transitions ---
 
   function start() {
+    if (!consentReady) return;
     window.cbTrack('quiz_started');
     setShowResume(false);
     setStage('quiz');
   }
 
   function resumeQuiz() {
+    if (!consentReady) return;
     setShowResume(false);
     setStage('quiz');
   }
 
   function discardAndStart() {
+    if (!consentReady) return;
     clearState();
     setAnswers(null);
     setShowResume(false);

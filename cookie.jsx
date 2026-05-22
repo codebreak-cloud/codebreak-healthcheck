@@ -133,18 +133,29 @@ function CookiePanel({ prefs, onSave, onClose }) {
   );
 }
 
-/* ── Banner ───────────────────────────────────────────────── */
+/* ── Banner (blocking modal — must choose before quiz starts) */
 function CookieBanner({ onAcceptAll, onRejectAll, onManage }) {
   return (
-    <div className="ck-banner" role="region" aria-label="Cookie consent">
-      <div className="ck-banner-inner">
-        <p className="ck-banner-text">
-          We use essential cookies to make this website work. With your permission, we'll also use analytics and advertising cookies to measure performance and improve our marketing. You can accept all, reject non-essential cookies, or manage your choices.
-        </p>
-        <div className="ck-banner-actions">
-          <button className="ck-btn-primary" onClick={onAcceptAll}>Accept all</button>
-          <button className="ck-btn-secondary" onClick={onRejectAll}>Reject non-essential</button>
-          <button className="ck-btn-ghost" onClick={onManage}>Manage choices</button>
+    <div className="ck-backdrop" role="dialog" aria-modal="true" aria-label="Cookie consent">
+      <div className="ck-panel">
+        <div className="ck-panel-head">
+          <span className="ck-panel-title">Before you start</span>
+        </div>
+        <div className="ck-panel-body" style={{ padding: '20px 24px' }}>
+          <p className="ck-banner-text" style={{ fontSize: 14 }}>
+            We use essential cookies to run this quiz. With your permission we'd also use analytics and advertising cookies to understand how people use this page and improve our marketing.
+          </p>
+        </div>
+        <div className="ck-panel-foot ck-banner-foot">
+          <button className="cb-btn block" onClick={onAcceptAll}>
+            Accept all <span className="arrow">→</span>
+          </button>
+          <button className="ck-btn-secondary ck-banner-btn" onClick={onRejectAll}>
+            Reject non-essential
+          </button>
+          <button className="ck-btn-ghost ck-banner-btn" onClick={onManage}>
+            Manage choices
+          </button>
         </div>
       </div>
     </div>
@@ -167,21 +178,28 @@ function CookieConsent() {
   // Apply persisted consent on mount
   React.useEffect(() => { if (saved) applyConsent(saved); }, []); // eslint-disable-line
 
+  function notifyConsentSaved() {
+    try { window.dispatchEvent(new CustomEvent('cb_consent_saved')); } catch {}
+  }
+
   function acceptAll() {
     const p = { analytics: true, advertising: true };
     persistConsent(p); applyConsent(p);
     setPrefs(p); setShowBanner(false); setShowPanel(false);
+    notifyConsentSaved();
   }
 
   function rejectAll() {
     const p = { analytics: false, advertising: false };
     persistConsent(p);
     setPrefs(p); setShowBanner(false); setShowPanel(false);
+    notifyConsentSaved();
   }
 
   function saveChoices(p) {
     persistConsent(p); applyConsent(p);
     setPrefs(p); setShowBanner(false); setShowPanel(false);
+    notifyConsentSaved();
   }
 
   function openPanel() { setShowPanel(true); setShowBanner(false); }
