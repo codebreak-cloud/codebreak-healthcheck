@@ -207,20 +207,17 @@ window.TIER_CTA = {
   one: {
     headline: 'Let’s look at where you can grow fastest.',
     body: 'Your score puts you in a strong position. The next step is a 30-minute strategy call, we’ll look at your specific numbers, identify your biggest opportunities, and give you a clear picture of what a serious paid media strategy could produce. If it’s a fit, we’ll tell you. If it isn’t, we’ll tell you that too.',
-    button: 'Book your strategy call',
-    note: 'We’ll review your results before the call. Expect a real conversation, not a sales script.',
+    button: ‘Book Your Free Marketing Clarity Session’,
   },
   two: {
-    headline: 'You’re closer than you think. Let’s close the gaps.',
-    body: 'Your score shows a business that’s mostly ready, with a few specific things holding it back. A 30-minute call won’t be a pitch. It’ll be a straight conversation about what those gaps are, how quickly they’re fixable, and what scaling your marketing realistically looks like from here. No lock-in. No obligation. Just a clear picture of where you are and what’s next.',
-    button: 'Book your free audit call',
-    note: 'We’ll review your results before the call. Come prepared to be honest, we will be too.',
+    headline: ‘You’re closer than you think. Let’s close the gaps.’,
+    body: ‘Your score shows a business that’s mostly ready, with a few specific things holding it back. A 30-minute call won’t be a pitch. It’ll be a straight conversation about what those gaps are, how quickly they’re fixable, and what scaling your marketing realistically looks like from here. No lock-in. No obligation. Just a clear picture of where you are and what’s next.’,
+    button: ‘Book Your Free Marketing Clarity Session’,
   },
   three: {
-    headline: 'You’re not ready to scale yet. But you’re not far off.',
-    body: 'Your results are honest, and so are we. Scaling paid media right now wouldn’t produce the results you want, because there are a few things that need to be in place first. That doesn’t mean we can’t help. A 30-minute call right now is worth having, not to talk about campaigns, but to give you a clear picture of exactly what needs to change and in what order. No pitch. No pressure. Just straight advice from people who’ve had this conversation hundreds of times.',
-    button: 'Book your free 30-minute call',
-    note: 'We’ll tell you what needs fixing, in what order, and roughly how long it’ll take. If we’re not the right fit to help you get there, we’ll tell you that too.',
+    headline: ‘You’re not ready to scale yet. But you’re not far off.’,
+    body: ‘Your results are honest, and so are we. Scaling paid media right now wouldn’t produce the results you want, because there are a few things that need to be in place first. That doesn’t mean we can’t help. A 30-minute call right now is worth having, not to talk about campaigns, but to give you a clear picture of exactly what needs to change and in what order. No pitch. No pressure. Just straight advice from people who’ve had this conversation hundreds of times.’,
+    button: ‘Book Your Free Marketing Clarity Session’,
   },
 };
 

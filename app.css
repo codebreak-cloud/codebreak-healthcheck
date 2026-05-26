@@ -885,6 +885,44 @@ button { font-family: inherit; }
   max-width: 520px;
 }
 
+/* Marketing Clarity Session description block */
+.cta-description {
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  max-width: 600px;
+}
+.cta-description p {
+  font-family: var(--font-body);
+  font-weight: var(--fw-light);
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 14px;
+}
+.cta-description ul {
+  margin: 0 0 14px 0;
+  padding-left: 20px;
+}
+.cta-description ul li {
+  font-family: var(--font-body);
+  font-weight: var(--fw-light);
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 4px;
+}
+.cta-description .cta-no-fluff {
+  color: rgba(255,255,255,0.75);
+  font-weight: var(--fw-regular);
+}
+.cta-description .cta-arrive {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+  margin-top: 20px;
+}
+
 /* Retake + copyright tail */
 .results-tail {
   background: var(--cb-off-white);

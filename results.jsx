@@ -212,7 +212,26 @@ function ResultsScreen({ scoring, contact, onRestart }) {
           <button className="cb-btn" onClick={openBooking}>
             {cta.button} <span className="arrow">→</span>
           </button>
-          <p className="cta-note">{cta.note}</p>
+          <div className="cta-description">
+            <p>This isn't a scripted sales call or a generic "tell me about your business" conversation.</p>
+            <p>Before the session, Joel will review your Marketing Health Check results in detail — including the gaps, bottlenecks, opportunities, and patterns most business owners miss.</p>
+            <p>On the call, you'll talk through:</p>
+            <ul>
+              <li>What's currently holding your marketing back</li>
+              <li>Where leads, conversions, or revenue may be leaking</li>
+              <li>What's realistically possible based on your current position</li>
+              <li>The fastest opportunities for growth</li>
+              <li>Whether scaling now actually makes sense, or whether something needs fixing first</li>
+            </ul>
+            <p>Some businesses come into this ready to scale aggressively.</p>
+            <p>Others realise they're wasting money because the foundations underneath the marketing aren't solid yet.</p>
+            <p>Either way, you'll leave with clarity.</p>
+            <p className="cta-no-fluff">No hard pitch.<br />No jargon.<br />No pressure.</p>
+            <p>Just a straight conversation with someone who's worked with founder-led businesses across multiple industries and understands what actually moves the needle.</p>
+            <p>If Codebreak can help, Joel will tell you.</p>
+            <p>If you're better fixing things internally first, he'll tell you that too.</p>
+            <p className="cta-arrive">Please arrive on time and ready for an honest conversation.</p>
+          </div>
         </div>
       </section>
 
