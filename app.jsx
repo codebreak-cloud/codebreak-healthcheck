@@ -12,7 +12,7 @@ const CONFIG = {
 
   // Calendly link (used in results.jsx via window.open)
   // results.jsx appends ?name=&email=&a1= automatically
-  calendlyUrl: 'https://calendly.com/codebreak/30-minute-follow-up-chat',
+  calendlyUrl: 'https://calendly.com/codebreak/marketing-clarity-session',
 
   // GA4 measurement ID — set to your GA4 ID to enable analytics
   // e.g. 'G-XXXXXXXXXX'
